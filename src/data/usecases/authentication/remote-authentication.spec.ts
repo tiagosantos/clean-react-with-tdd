@@ -1,5 +1,5 @@
 import { RemoteAuthentication } from './remote-authentication'
-import { HttpPostClient } from 'data/protocols/http/http-post-client'
+import { type HttpPostClient } from 'data/protocols/http/http-post-client'
 
 describe('RemoteAuthentication', () => {
   test('Should call HttpPostClient with correct URL', async () => {
@@ -8,7 +8,7 @@ describe('RemoteAuthentication', () => {
 
       async post (url: string): Promise<void> {
         this.url = url
-        return Promise.resolve()
+        await Promise.resolve()
       }
     }
     const url = 'any_url'
